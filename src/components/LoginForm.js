@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
         <CardSection />
         <CardSection />
         <CardSection>
-          <Button buttonText="Log In" />
+          <Button buttonText="Log In!" />
         </CardSection>
       </Card>
     );
