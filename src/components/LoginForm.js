@@ -1,8 +1,15 @@
 import React from 'react';
+import firebase from 'firebase';
 import { Button, Card, CardSection, Input } from './common';
 
 class LoginForm extends React.Component {
   state = { email: '', password: '' };
+
+  onButtonPress() {
+    const { email, password } = this.state;
+
+    firebase.autho().signInWithEmailAndPassword(email, password);
+  }
 
   render() {
     return (
@@ -27,7 +34,10 @@ class LoginForm extends React.Component {
         </CardSection>
 
         <CardSection>
-          <Button buttonText="Log In!" />
+          <Button
+            onPress={this.onButtonPress.bind(this)}
+            buttonText="Log In!"
+          />
         </CardSection>
       </Card>
     );
