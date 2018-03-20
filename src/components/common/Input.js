@@ -1,7 +1,13 @@
 import React from 'react';
 import { TextInput, Text, View } from 'react-native';
 
-const Input = ({ label, value, onChangeText, placeholder }) => {
+const Input = ({
+  label,
+  value,
+  onChangeText,
+  placeholder,
+  secureTextEntry
+}) => {
   const { inputStyle, labelStyle, containerStyle } = styles;
 
   return (
@@ -10,6 +16,7 @@ const Input = ({ label, value, onChangeText, placeholder }) => {
       <TextInput
         placeholder={placeholder}
         autocorrect={false}
+        secureTextEntry={secureTextEntry}
         style={inputStyle}
         value={value}
         onChangeText={onChangeText}
